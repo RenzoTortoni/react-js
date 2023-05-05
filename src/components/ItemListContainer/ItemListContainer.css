@@ -1,0 +1,6 @@
+h1, p {
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--text);
+    letter-spacing: 0.1rem;
+}

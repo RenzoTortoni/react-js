@@ -1,0 +1,11 @@
+.Cart-Widget-F {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Cart-Widget {
+    width: 50px;
+    filter: invert(1)
+}
