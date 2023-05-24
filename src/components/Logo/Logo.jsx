@@ -1,7 +1,7 @@
 import img from "./assets/Logo.png"
 import "./Logo.css"
 
-function Logo() {
+const Logo = () => {
     return (
         <img src={img} alt="Logo" className="Logo"/>
     )

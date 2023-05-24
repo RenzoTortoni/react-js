@@ -1,7 +1,7 @@
 import carrito from "./assets/cart-icon.svg"
 import "./CartWidget.css"
 
-function CartWidget() {
+const CartWidget = () => {
     return (
         <div className="Cart-Widget-F">
             <img src={carrito} alt="cart-icon" className="Cart-Widget"/>
