@@ -2,6 +2,7 @@ import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({ id, name, img, category, description, price, stock, platform }) => {
+    
     return (
         <article className="ItemCard">
             <h2 className="ItemName">
@@ -14,17 +15,20 @@ const ItemDetail = ({ id, name, img, category, description, price, stock, platfo
                 <p className="ItemCategory">
                     Categoria: {category}
                 </p>
-                
-                <p className="ItemDescription">
-                    Descripción: {description}
-                </p>
+
+                <div className="ItemBtnCount">
+                    <ItemCount initial = {1} stock = {stock} onAdd={(quantity) => alert("Cantidad agregada = ", quantity)}/>
+                </div>
                 
                 <p className="ItemPrice">
                     Precio: ${price}
                 </p>
             </div>
-
-            <ItemCount initial = {1} stock = {stock} onAdd={(quantity) => console.log("Cantidad agregada = ", quantity)} />
+            
+            <p className="ItemDescription">
+                Descripción: {description}
+            </p>
+            
         </article>
     )
 }
