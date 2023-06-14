@@ -1,16 +1,6 @@
 const products = [
     {
       id: 1,
-      name: "Path Of Exile",
-      img: "https://cdn.cloudflare.steamstatic.com/steam/apps/238960/header.jpg?t=1680737814",
-      category: "ARPG",
-      description: "Path of Exile es un juego de rol y acción en línea con un mundo oscuro de fantasía llamado Wraeclast. Los jugadores luchan contra monstruos, completan misiones y mejoran su equipamiento. Destaca por su sistema de habilidades flexible y su alta dificultad. También tiene un sistema de comercio y se actualiza regularmente con nuevo contenido.",
-      price: 0,
-      stock: 10,
-      platform: "PlayStation 4, Xbox One, PC"
-    },
-    {
-      id: 2,
       name: "FIFA 23",
       img: "https://bolavip.com/__export/1671668411392/sites/bolavip/img/2022/12/21/campeon_crop1671668411063.jpg_242310155.jpg",
       category: "Deportes",
@@ -20,7 +10,27 @@ const products = [
       platform: "PlayStation 5, Xbox Series X/S, PlayStation 4, Xbox One, PC"
     },
     {
+        id: 2,
+        name: "WoW: Wrath of the Lich King Classic™",
+        img: "https://i.ytimg.com/vi/SivbL5wproA/maxresdefault.jpg",
+        category: "MMORPG",
+        description: "World of Warcraft es un popular juego de rol multijugador masivo en línea (MMORPG) desarrollado por Blizzard Entertainment. Ambientado en un vasto mundo de fantasía llamado Azeroth, los jugadores pueden crear y personalizar sus propios personajes de diferentes razas y clases. Exploran un mundo lleno de misiones, combates contra monstruos, mazmorras desafiantes y batallas jugador contra jugador. Con una comunidad masiva, actualizaciones regulares y una historia épica, World of Warcraft ofrece una experiencia inmersiva y emocionante para los amantes de los juegos de rol y la exploración en línea.",
+        price: 13.99,
+        stock: 12,
+        platform: "PC"
+    },
+    {
       id: 3,
+      name: "Path Of Exile",
+      img: "https://cdn.cloudflare.steamstatic.com/steam/apps/238960/header.jpg?t=1680737814",
+      category: "ARPG",
+      description: "Path of Exile es un juego de rol y acción en línea con un mundo oscuro de fantasía llamado Wraeclast. Los jugadores luchan contra monstruos, completan misiones y mejoran su equipamiento. Destaca por su sistema de habilidades flexible y su alta dificultad. También tiene un sistema de comercio y se actualiza regularmente con nuevo contenido.",
+      price: 0,
+      stock: 10,
+      platform: "PlayStation 4, Xbox One, PC"
+    },
+    {
+      id: 4,
       name: "Assassin's Creed Valhalla",
       img: "https://cdn1.epicgames.com/400347196e674de89c23cc2a7f2121db/offer/AC%20KINGDOM%20PREORDER_STANDARD%20EDITION_EPIC_Key_Art_Wide_3840x2160-3840x2160-485fe17203671386c71bde8110886c7d.jpg",
       category: "Acción y aventura",
@@ -30,7 +40,7 @@ const products = [
       platform: "PlayStation 5, Xbox Series X/S, PlayStation 4, Xbox One, PC"
     },
     {
-      id: 4,
+      id: 5,
       name: "Call of Duty: Modern Warfare",
       img: "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/kronos/common/social-share/social-share-image.jpg",
       category: "Acción",
@@ -38,16 +48,6 @@ const products = [
       price: 59.99,
       stock: 8,
       platform: "PlayStation 5, Xbox Series X/S, PlayStation 4, Xbox One, PC"
-    },
-    {
-      id: 5,
-      name: "World of Warcraft®: Wrath of the Lich King® Classic™ (porque es el mejor)",
-      img: "https://i.ytimg.com/vi/SivbL5wproA/maxresdefault.jpg",
-      category: "Plataformas",
-      description: "World of Warcraft es un popular juego de rol multijugador masivo en línea (MMORPG) desarrollado por Blizzard Entertainment. Ambientado en un vasto mundo de fantasía llamado Azeroth, los jugadores pueden crear y personalizar sus propios personajes de diferentes razas y clases. Exploran un mundo lleno de misiones, combates contra monstruos, mazmorras desafiantes y batallas jugador contra jugador. Con una comunidad masiva, actualizaciones regulares y una historia épica, World of Warcraft ofrece una experiencia inmersiva y emocionante para los amantes de los juegos de rol y la exploración en línea.",
-      price: 13.99,
-      stock: 12,
-      platform: "PC"
     },
     {
       id: 6,
@@ -121,7 +121,7 @@ const products = [
     },
     {
       id: 13,
-      name: "Sekiro™: Shadows Die Twice - GOTY Edition",
+      name: "Sekiro™: Shadows Die Twice - GOTY",
       img: "https://cdn.akamai.steamstatic.com/steam/apps/814380/header.jpg?t=1678991267",
       category: "Acción y aventura",
       description: "Experimenta ser un shinobi del Período Sengoku, conocido como Lobo, que intenta vengarse de un clan de samuráis que atacó y secuestró a su maestro.",
@@ -185,7 +185,7 @@ const products = [
       img: "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg?t=1683618443",
       category: "Rol",
       description: "Álzate, Sinluz, y que la gracia te guíe para abrazar el poder del Círculo de Elden y encumbrarte como señor del Círculo en las Tierras Intermedias.",
-      price: 0.99,
+      price: 59.99,
       stock: 15,
       platform: "PlayStation 5, PlayStation 4, Xbox One, PC"
     },
@@ -341,6 +341,6 @@ export const getProductsByCategory = (category) => {
   return new Promise((resolve) => {
     setTimeout(() => {
         resolve(products.filter(prod => prod.category === category))
-  }, 500)
-})
+    }, 500)
+  })
 }

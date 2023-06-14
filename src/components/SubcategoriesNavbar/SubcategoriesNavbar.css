@@ -1,8 +1,8 @@
 .SubcategoriesNavbar {
   position: absolute;
-  top: 100%; /* Posición relativa al elemento padre */
+  top: 100%; 
   left: 0;
-  display: none; /* Ocultar el menú por defecto */
+  display: none;
   background-color: #fff;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -18,15 +18,15 @@
   padding: 5px 0;
 }
 
-.SubcategoriesNavbar:hover {
-  display: block; /* Mostrar el menú al pasar el mouse sobre el contenedor */
+/* .SubcategoriesNavbar:hover ul li {
+  display: flex;
+} */
+
+ul li:hover .SubcategoriesNavbar {
+  display: flex;
+  flex-direction: column;
 }
 
-/* .subcategoriesNavbar {
-    display: none;
+select {
+  padding: 40px;
 }
-  
-li:hover .subcategoriesNavbar {
-    display: block;
-}
-   */

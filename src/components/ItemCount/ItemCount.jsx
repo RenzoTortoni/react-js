@@ -4,16 +4,24 @@ import { useState } from "react";
 const ItemCount = ({initial, stock, onAdd}) => {
     const [quantity, setQuantity] = useState(initial)
 
+    // const increment = () => {
+    //     if(quantity < stock) {
+    //         setQuantity(quantity + 1)
+    //     }
+    // }
+
+    // const decrement = () => {
+    //     if(quantity > 1) {
+    //         setQuantity(quantity - 1)
+    //     }
+    // }
+
     const increment = () => {
-        if(quantity < stock) {
-            setQuantity(quantity + 1)
-        }
+        setQuantity(quantity + 1)    
     }
 
     const decrement = () => {
-        if(quantity > 1) {
-            setQuantity(quantity - 1)
-        }
+        setQuantity(quantity - 1)
     }
 
     return(
