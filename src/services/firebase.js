@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore"
+import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDsmok36iGfa0vGlF8HS8qoaP_URJ70l74",
@@ -13,14 +13,24 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp)
 
-function getData() {
-    const querySnapshot = await getDocs(collection(db, "products"))
+export async function getData() {
+  const productsCollectionRef = collection(db, "products")
+  const productsSnapshot = await getDocs(productsCollectionRef)
+  const arrayDocs = productsSnapshot.docs
+  
+  const dataDocs = arrayDocs.map((doc) => {
+    return { ...doc.data(), id: doc.id }
+  } )
+
+  return dataDocs
 }
 
-function getItemData() {
-
+export async function getItemData(id) {
+  const docRef = doc(db, "products", "id")
+  const docSnapshot = await getDoc(docRef)
+  return { id: docSnapshot.id, ...docSnapshot.data() }
 }
 
-function getCategoryData() {
+export async function getCategoryData() {
 
 }

@@ -1,3 +1,8 @@
 .ItemListContainer {
+    padding: 3rem;
     text-align: center;
+}
+
+.ItemListContainer h1 {
+    margin-block: 0.3rem;
 }

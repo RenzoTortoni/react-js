@@ -1,8 +1,32 @@
 .ItemCardDetail {
-  width: 300px;
-  padding: 15px 15px 30px 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(137, 120, 120, 0.5);
-  transition: transform 0.5s;
-  margin: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 15px;
+  margin: 5rem 15rem;
+  gap: 100px;
+}
+
+.ItemImgDetail {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.ItemBuyDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ItemPriceDetail {
+  font-size: 22px;
+  margin-block: 10px;
+}
+
+.ItemInfoDetail {
+  display: flex;
+  flex-direction: column;
+  
 }

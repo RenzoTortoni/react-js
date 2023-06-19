@@ -1,0 +1,35 @@
+.ItemControls {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+
+}
+
+.ItemBtnCount {
+    /* width: 200px ; */
+    padding: 0.1rem 1.8rem;
+    font-size: 30px;
+    cursor: pointer;
+
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+    border-radius: 6%;
+}
+
+.ItemNumber {
+    margin: 10px;
+}
+
+.ItemBtnCart {
+    /* width: 200px ;
+    height: 35px; */
+    padding: 0.7rem 1.5rem;
+    font-size: 20px;
+    cursor: pointer;
+
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+    border-radius: 3%;
+}

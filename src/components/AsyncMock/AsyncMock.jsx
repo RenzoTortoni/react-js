@@ -84,7 +84,7 @@ const products = [
       name: "Resident Evil 4",
       img: "https://cdn.akamai.steamstatic.com/steam/apps/254700/header.jpg?t=1679690571",
       category: "Survival Horror",
-      description: "",
+      description: "Resident Evil 4 es un juego de terror y acción que sigue la historia de Leon S. Kennedy en su misión de rescatar a la hija del presidente de los Estados Unidos en un oscuro pueblo plagado de criaturas infectadas, combinando una jugabilidad intensa, una trama envolvente y una atmósfera inquietante.",
       price: 19.99,
       stock: 6,
       platform: "PlayStation 4, Xbox One, PC"
@@ -332,7 +332,7 @@ export const getProducts = () => {
 export const getProductsById = (productId) => {
     return new Promise ((resolve) => {
       setTimeout(() => {
-          resolve(products.find(prod => prod.id === productId))
+          resolve(products.find(prod => prod.id === parseInt(productId)))
       }, 500);
   })
 }

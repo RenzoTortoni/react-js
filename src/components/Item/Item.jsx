@@ -18,13 +18,8 @@ const Item = ({id, name, img, price}) => {
                     </p>
 
                     <div className="ItemDetail">
-                        <Link to={`/item/${id}`} className="ItemBtn">Ver detalle</Link>
+                        <Link to={`/item/${id}`} className="ItemBtn">Ver detalles</Link>
                     </div>
-
-                    {/* <p className="ItemCategory">
-                        Categoria: {category}
-                    </p> */}
-                    
                 </div>
             </div>
         </article>
