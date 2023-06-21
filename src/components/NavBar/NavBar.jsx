@@ -3,43 +3,31 @@ import CartWidget from "../CartWidget/CartWidget"
 import Logo from "../Logo/Logo"
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import SubcategoriesNavbar from "../SubcategoriesNavbar/SubcategoriesNavbar";
 
 const NavBar = () => {
-  const [showSubcategories, setShowSubcategories] = useState(false);
-
-  const handleMouseEnter = () => {
-    setShowSubcategories(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowSubcategories(false);
-  };
-
   return (
     <nav className="NavBar">
 
-    <Link to="/">
+      <Link to="/">
         <Logo />
-    </Link>
+      </Link>
 
       <ul>
         <li>
             <NavLink to={`/`} className={({ isActive }) => isActive ? "ActiveOption" : "Option"}>Inicio</NavLink>
         </li>
-        <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <a>Categorías</a>
-            {showSubcategories && <SubcategoriesNavbar />}
+        <li>
+            <NavLink to={`/category/Acción y aventura`} className={({ isActive }) => isActive ? "ActiveOption" : "Option"}>Acción y aventura</NavLink>
         </li>
         <li>
-            <NavLink to={`/category/Nosotros`} className={({ isActive }) => isActive ? "ActiveOption" : "Option"}>Nosotros</NavLink>
+            <NavLink to={`/category/MMORPG`} className={({ isActive }) => isActive ? "ActiveOption" : "Option"}>MMORPG</NavLink>
         </li>
         <li>
-            <NavLink to={`/category/Soporte`} className={({ isActive }) => isActive ? "ActiveOption" : "Option"}>Soporte</NavLink>
+            <NavLink to={`/category/Deportes`} className={({ isActive }) => isActive ? "ActiveOption" : "Option"}>Deportes</NavLink>
         </li>
       </ul>
 
-      <CartWidget />
+      <CartWidget/>
     </nav>
   )
 }

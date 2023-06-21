@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore"
+import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDsmok36iGfa0vGlF8HS8qoaP_URJ70l74",
@@ -12,9 +12,9 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp)
+const productsCollectionRef = collection(db, "products")
 
 export async function getData() {
-  const productsCollectionRef = collection(db, "products")
   const productsSnapshot = await getDocs(productsCollectionRef)
   const arrayDocs = productsSnapshot.docs
   
@@ -25,12 +25,21 @@ export async function getData() {
   return dataDocs
 }
 
-export async function getItemData(id) {
-  const docRef = doc(db, "products", "id")
+export async function getItemData(idUrl) {
+  const docRef = doc(db, "products", idUrl)
   const docSnapshot = await getDoc(docRef)
   return { id: docSnapshot.id, ...docSnapshot.data() }
 }
 
-export async function getCategoryData() {
+export async function getCategoryData(idCategory) {
+  const q = query(productsCollectionRef, where("category", "==", idCategory))
 
+  const productsSnapshot = await getDocs(q)
+  const arrayDocs = productsSnapshot.docs
+  
+  const dataDocs = arrayDocs.map((doc) => {
+    return { ...doc.data(), id: doc.id }
+  } )
+
+  return dataDocs
 }
