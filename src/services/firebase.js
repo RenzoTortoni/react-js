@@ -53,14 +53,29 @@ export async function createOrder(data) {
   return response.id
 }
 
-export async function exportData() {
+// export async function exportData() {
 
-  for(let item of products) {
-    item.index = item.id
-    delete item.id
-    await addDoc(productsCollectionRef, item)
-    console.log("documento creado:", res.id)
+//   for(let item of products) {
+//     item.index = item.id
+//     delete item.id
+//     await addDoc(productsCollectionRef, item)
+//     console.log("documento creado:", res.id)
+//   }
+// }
+
+export async function exportData() {
+  try {
+    for (let item of products) {
+      const newItem = { ...item };
+      // Copia del objeto para eliminar la propiedad "id"
+
+      // Eliminar la propiedad "id" del objeto antes de enviarlo a Firebase
+      delete newItem.id;
+
+      const res = await addDoc(productsCollectionRef, newItem);
+      console.log("Documento creado:", res.id);
+    }
+  } catch (error) {
+    console.error("Error al exportar datos:", error);
   }
 }
-
-
