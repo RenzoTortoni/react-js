@@ -16,21 +16,7 @@ const ItemListContainer = ({ }) => {
         fetchData(categoryId)
             .then(res => setProducts(res))
     }, [categoryId])
-
-    // useEffect(() => {
-    //     getData()
-    //         .then((res) => {
-    //             if (categoryId) {
-    //                 const filterProducts = res.filter(
-    //                     (item) => item.category === categoryId
-    //                 )
-    //                 setProducts(filterProducts)
-    //             } else {
-    //                 setProducts(res)
-    //             }
-    //         })
-    // }, [categoryId])
-
+    
     return (
         <div>
             <div className="ItemListContainer">

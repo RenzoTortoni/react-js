@@ -1,0 +1,49 @@
+.FormHeader {
+    font-family: var(--text);
+    font-size: 2.3rem;
+    color: #fff;
+}
+
+.FormHeaderText {
+    grid-column: 1 / 9;
+    justify-self: center;
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    
+    align-items: center;
+    justify-items: stretch;
+    margin-block: 3rem;
+
+    font-family: var(--text);
+    font-size: 2.3rem;
+    color: #fff;
+}
+
+.LabelGrid {
+    grid-column: 3/5;
+}
+
+.InputGrid {
+    grid-column: 5/7;
+
+    border-color: transparent;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    width: 100%;
+    height: 60%;
+}
+
+.FormSubmit {
+    margin: 2rem;
+    grid-column: 4 / 6;
+}
+
+.FormSubmit:hover {
+    background-color: limegreen;
+    box-shadow: 0 0 0 4px limegreen, 0 0 0 8px #fff;
+    color: #fff;
+}

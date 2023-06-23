@@ -1,11 +1,14 @@
-.Cart-Widget-F {
-    color: #fff;
+.CartWidgetContainer {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
 }
 
-.Cart-Widget {
+.CartWidgetQuantity {
+    margin-inline: 0.5rem;
+}
+
+.CartWidgetIcon {
     width: 50px;
     filter: invert(1)
 }

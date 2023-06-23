@@ -18,14 +18,23 @@
 
 }
 
-p {
-    font-family: var(--text)
+body {
+    background-image: linear-gradient( 360deg, rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );
 }
 
 h1, h2, h3, h4, h5 {
     font-family: var(--title);
 }
 
-body {
-    background-image: linear-gradient( 360deg, rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );
+p, h1, h2, h3 {
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+p {
+    font-family: var(--text)
+}
+
+button {
+    font-family: var(--text)
 }

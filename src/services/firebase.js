@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore"
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc, orderBy } from "firebase/firestore"
+import products from "../data/products"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDsmok36iGfa0vGlF8HS8qoaP_URJ70l74",
@@ -15,7 +16,8 @@ const db = getFirestore(firebaseApp)
 const productsCollectionRef = collection(db, "products")
 
 export async function getData() {
-  const productsSnapshot = await getDocs(productsCollectionRef)
+  const q = query(productsCollectionRef, orderBy("index"))
+  const productsSnapshot = await getDocs(q)
   const arrayDocs = productsSnapshot.docs
   
   const dataDocs = arrayDocs.map((doc) => {
@@ -43,3 +45,22 @@ export async function getCategoryData(idCategory) {
 
   return dataDocs
 }
+
+export async function createOrder(data) {
+  const ordersCollectionRef = collection(db, "orders")
+  
+  const response = await addDoc(ordersCollectionRef, data)
+  return response.id
+}
+
+export async function exportData() {
+
+  for(let item of products) {
+    item.index = item.id
+    delete item.id
+    await addDoc(productsCollectionRef, item)
+    console.log("documento creado:", res.id)
+  }
+}
+
+
