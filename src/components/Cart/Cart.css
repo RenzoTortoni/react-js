@@ -26,6 +26,10 @@
 
 .RemoveCartColumn {
     grid-column:  9 / 11;
+
+    filter: invert(1);
+    height: 30px;
+    width: 30px;
 }
 
 .CartImg {

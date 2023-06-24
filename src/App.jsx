@@ -10,14 +10,11 @@ import OrderId from "./components/OrderID/OrderID"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import CartProvider from "./context/CartContext"
 
-import { exportData } from "./services/firebase"
-
 function App() {
   return (
     <BrowserRouter>
       <CartProvider>
         <NavBar/>
-          <button onClick={exportData}>Exportar data</button>
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/category/:categoryId" element={<ItemListContainer />} />

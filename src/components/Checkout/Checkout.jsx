@@ -32,13 +32,6 @@ const Checkout = () => {
   
       const id = await createOrder(order)
       navigateTo(`/OrderId/${id}`)
-
-      // Swal.fire({
-      //   position: 'top-center',
-      //   icon: 'success',
-      //   title: '¡Gracias por su compra! Por favor guarde su identificador: ' + id,
-      //   showConfirmButton: false,
-      // });
   
       setName('')
       setEmail('')

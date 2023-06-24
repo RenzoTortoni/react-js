@@ -1,4 +1,5 @@
 import "./Cart.css"
+import eliminar from "./assets/cart-delete-60.svg"
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom"
@@ -7,7 +8,7 @@ const Cart = () => {
     const { cart, removeItem, clearCart, totalPrice } = useContext(CartContext)
 
     return (
-        <div className="">
+        <div>
             {
                 cart.map((prod) =>
                     <div className="CartContainer key={prod.id}">
@@ -23,9 +24,8 @@ const Cart = () => {
                         <div className="SubtotalCartColumn">
                             <p>Subtotal: ${(prod.price * prod.quantity).toFixed(2)}</p>
                         </div>
-                        <button className="RemoveCartColumn" onClick={removeItem}>
-                            eliminar
-                        </button>
+                        
+                        <img className="RemoveCartColumn" onClick={() => removeItem(prod.id)} src={eliminar} alt="Botón para eliminar" />
                     </div>
                 )
             }
