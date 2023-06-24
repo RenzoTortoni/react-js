@@ -1,6 +1,5 @@
 import "./OrderId.css"
 import { useParams } from 'react-router-dom'
-import { getData } from '../../services/firebase'
 
 function OrderId() {
     const { orderId } = useParams()
