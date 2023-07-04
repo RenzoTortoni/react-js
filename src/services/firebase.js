@@ -11,7 +11,7 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_appId
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig, { experimentalForceLongPolling: true });
 const db = getFirestore(firebaseApp)
 const productsCollectionRef = collection(db, "products")
 
