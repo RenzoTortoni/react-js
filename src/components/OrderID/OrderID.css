@@ -1,4 +1,4 @@
-.OrderContainer {
+.OrderIdContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,10 +6,10 @@
     padding: 20rem;
 }
 
-.OrderThanks {
+.OrderIdThanks {
     font-size: 4rem;
 }
 
-.Order {
+.OrderId {
     font-size: 1.5rem;
 }

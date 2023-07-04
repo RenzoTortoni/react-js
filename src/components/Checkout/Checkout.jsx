@@ -31,7 +31,7 @@ const Checkout = () => {
       };
   
       const id = await createOrder(order)
-      navigateTo(`/Order/${id}`)
+      navigateTo(`/OrderId/${id}`)
   
       setName('')
       setEmail('')
